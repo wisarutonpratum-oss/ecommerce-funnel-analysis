@@ -2,19 +2,19 @@
 ### Direct-to-Consumer | SQL | Power BI | DAX | Excel | Python
 
 ## 1. Overview
-Analyzed an e-commerce conversion funnel to identify where customers drop off in the purchase journey and evaluate how channel, device, and user type affect conversion performance and revenue generation.
+Analyzed an e-commerce conversion funnel to identify where customers drop off before purchase and evaluate how acquisition channels, devices, and user types influence conversion performance and revenue generation.
 
 ---
 
 ## 2. Business Problem
-For e-commerce businesses, traffic alone does not guarantee revenue growth. The more important question is how efficiently visitors move through the funnel from website visit to product exploration, cart addition, checkout, and purchase.
+For an e-commerce business, traffic alone does not guarantee revenue growth. The more important question is how efficiently visitors move through the funnel—from visiting the website to viewing products, adding items to cart, starting checkout, and completing a purchase.
 
 This project was designed to answer the following stakeholder questions:
 
-- Where is the biggest drop-off in the customer purchase funnel?
+- Where is the largest drop-off in the customer purchase funnel?
 - What is the overall conversion rate from session to purchase?
-- Do conversion rates differ across acquisition channels, devices, or user types?
-- Which marketing channels generate the most revenue and the highest conversion efficiency?
+- Do conversion rates differ across **channels**, **devices**, or **user types**?
+- Which marketing channels generate the most revenue, and which convert most efficiently?
 - What should the business prioritize to improve conversion performance?
 
 ---
@@ -42,12 +42,13 @@ This project was designed to answer the following stakeholder questions:
 ## 4. Key Findings
 
 - The dataset contains **120,000 sessions**, which generated **8,181 purchases** and **$17.02M in revenue**.
-- The largest funnel drop-off occurred between **Product View** and **Add to Cart**. Out of **77,870 product viewers**, only **27,156** added items to the cart, meaning approximately **65% of users dropped off before showing purchase intent**.
-- Funnel performance remained relatively stable across customer segments. **Mobile** converted at **6.78%** and **Desktop** at **6.91%**, suggesting that device experience is unlikely to be a major driver of funnel drop-off.
-- Conversion rates were also similar across acquisition channels. **Paid Ads** converted at **6.72%**, **Organic** at **6.81%**, **Social** at **6.81%**, and **Email** performed slightly better at **7.31%**.
-- Despite similar conversion efficiency, **Paid Ads** generated the highest business impact because it drove the largest traffic volume, producing **53,891 sessions**, **3,619 purchases**, and **$7.54M in revenue**.
-- **New users** converted at **6.92%**, only slightly above **Returning users** at **6.62%**, indicating that user type alone is not a strong differentiator of purchase behavior in this dataset.
-- Monthly performance was relatively consistent across the six-month period, with total revenue ranging from **$2.54M to $2.99M** per month and purchases ranging from **1,231 to 1,437**, suggesting stable funnel performance rather than sharp seasonality-driven spikes.
+- The overall session-to-purchase conversion rate was **6.82%**, with an average order value (AOV) of approximately **$2,079.53**.
+- The largest funnel drop-off occurred between **Product View** and **Add to Cart**. Out of **77,870 product viewers**, only **27,156** added items to cart, meaning approximately **65% of users dropped off before showing purchase intent**.
+- Conversion performance was highly consistent across devices: **Mobile converted at 6.78%** and **Desktop at 6.91%**, suggesting that device experience is unlikely to be the primary cause of funnel inefficiency.
+- Conversion rates were also similar across acquisition channels. **Paid Ads converted at 6.72%**, **Organic at 6.81%**, **Social at 6.81%**, while **Email performed slightly better at 7.31%**.
+- Despite similar conversion efficiency, **Paid Ads generated the highest business impact** because they drove the largest traffic volume, producing **53,891 sessions**, **3,619 purchases**, and **$7.54M in revenue**.
+- **New users converted at 6.92%**, only slightly above **Returning users at 6.62%**, indicating that user type alone is not a strong predictor of purchase behavior in this dataset.
+- Monthly performance remained relatively stable across the six-month period, with revenue ranging from **$2.54M to $2.99M** per month and purchases ranging from **1,231 to 1,437**, suggesting steady funnel performance rather than sharp seasonality-driven swings.
 
 ---
 
@@ -69,32 +70,36 @@ Explore the live Power BI dashboard here:
 
 ---
 
+### 3) — Campaign & Revenue Analysis
+![Campaign & Revenue Analysis](assets/campaign-revenue-analysis.png)
+
+---
+
 ## 6. Recommendations
 
 ### 1) Prioritize investigation of the Product View → Add to Cart drop-off
-The most significant loss in the funnel occurs between product browsing and cart addition. This suggests that the business should focus on improving the product evaluation stage by investigating factors such as:
+The largest loss in the funnel occurs between product browsing and cart addition. This suggests that the business should focus first on improving the **product evaluation stage**, including:
 - product page clarity and content quality
 - pricing visibility and discount communication
-- trust signals such as reviews, delivery information, and return policy visibility
+- trust signals such as reviews, shipping information, and return policy visibility
 - call-to-action placement and product-page usability
 
 ### 2) Do not prioritize device optimization as the first conversion initiative
-Since **Mobile** and **Desktop** conversion rates are highly similar, device type does not currently appear to be a major source of funnel inefficiency. Device optimization may still be useful, but it should not be the first priority compared with product-page and add-to-cart optimization.
+Since **Mobile** and **Desktop** conversion rates are nearly identical, device type does not currently appear to be a major source of funnel underperformance. Device optimization may still be useful, but it should not be the first priority compared with product-page and add-to-cart optimization.
 
-### 3) Evaluate marketing channels using cost data, not conversion rate alone
-Although conversion rates are similar across channels, their business value may differ significantly once acquisition cost is considered.  
-To make channel decisions more accurately, the business should incorporate:
+### 3) Evaluate channel performance using cost data, not conversion rate alone
+Although conversion rates are similar across channels, their business value may differ significantly once acquisition cost is considered. To make better channel decisions, the business should incorporate:
 - advertising spend by channel
 - customer acquisition cost (CAC)
 - return on ad spend (ROAS)
 
 Without cost data, it is not possible to determine which channel is the most cost-effective.
 
-### 4) Use Paid Ads as a scale lever, but validate profitability
-**Paid Ads** currently generate the largest share of sessions, purchases, and revenue. However, this does not automatically mean they are the best-performing channel from a profitability perspective. The business should compare paid traffic revenue against campaign cost before increasing budget allocation further.
+### 4) Use Paid Ads as a scale lever, but validate profitability before increasing budget
+**Paid Ads** currently generate the largest share of sessions, purchases, and revenue. However, that does not automatically mean they are the best-performing channel from a profitability perspective. The business should compare paid traffic revenue against campaign cost before scaling budget further.
 
-### 5) Extend the analysis with customer value metrics if transaction history is available
-This dataset is strong for funnel analysis, but not for long-term customer value analysis. If customer-level transaction history becomes available, the next step should be to analyze:
+### 5) Extend the analysis with customer value metrics if transaction history becomes available
+This dataset is strong for **funnel analysis**, but limited for **long-term customer value analysis**. If customer-level transaction history becomes available, the next step should be to analyze:
 - repeat purchase behavior
 - customer lifetime value (CLV)
 - retention differences between new and returning users
@@ -125,7 +130,8 @@ ecommerce-funnel-analysis/
 │
 ├─ assets/
 │  ├─ executive-overview.png
-│  └─ conversion-analysis.png
+│  ├─ conversion-analysis.png
+│  └─ campaign-revenue-analysis.png
 │
 └─ docs/
    └─ business_questions.md
